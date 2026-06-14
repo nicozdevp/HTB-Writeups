@@ -1,7 +1,7 @@
 #  Cap - Hack The Box
 
 **Sistema Operativo:** Linux 🐧  
-**Dificultad:** Easy 
+**Dificultad:** Easy
 **Dirección IP:** 10.129.26.108  
 
 ## Contexto
@@ -26,7 +26,11 @@ nmap -p- --open -sV -sC --min-rate 5000 10.129.26.108 -oN escaneo_inicial.txt
 
  ## Resultado del escaneo
 
- PuertoProtocoloEstadoServicioNotas / Versión21TCPAbierto FTPvsftpd 3.0.322TCPAbierto SSHOpenSSH 8.2p1 Ubuntu80TCPAbierto HTTPgunicorn
+ | Puerto | Protocolo | Estado | Servicio | Notas / Versión |
+| :--- | :---: | :---: | :--- | :--- |
+| **21** | TCP | Abierto  | **FTP** | vsftpd 3.0.3 |
+| **22** | TCP | Abierto  | **SSH** | OpenSSH 8.2p1 Ubuntu |
+| **80** | TCP | Abierto  | **HTTP** | gunicorn |
 
 **Conclusión del Reconocimiento**: Tenemos tres vías potenciales. FTP y SSH usualmente requieren credenciales. El puerto 80  aloja una aplicación web, por lo que será nuestro vector de entrada principal para buscar vulnerabilidades.
 
